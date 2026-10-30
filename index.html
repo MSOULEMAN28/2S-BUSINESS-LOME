@@ -3,8 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>2S BUSINESS — Tech Repair & Store | Lomé</title>
-  <meta name="description" content="2S BUSINESS à Lomé : réparation téléphones & ordinateurs, vente d'appareils et accessoires.">
+  <title>2S BUSINESS — Réparation & Vente Tech à Lomé | 70 83 33 90</title>
+  <meta name="description" content="2S BUSINESS à Lomé : réparation téléphones & ordinateurs, vente d'appareils et accessoires. Agoè Catholique, face Hôtel LKG2. ☎ +228 70 83 33 90">
+  <meta property="og:title" content="2S BUSINESS — Tech Repair & Store à Lomé">
+  <meta property="og:description" content="Réparation téléphones & ordinateurs, vente d'appareils et accessoires. ☎ +228 70 83 33 90">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=1200">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><polygon points='50,5 90,27 90,73 50,95 10,73 10,27' fill='none' stroke='%2300d4ff' stroke-width='4'/><text x='50' y='65' text-anchor='middle' font-size='40' font-weight='bold' fill='%2300d4ff'>2S</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -20,6 +25,7 @@
       --violet: #7c3aed;
       --bleu: #3b82f6;
       --vert-neon: #00ff88;
+      --vert-wa: #25D366;
       --blanc: #ffffff;
       --gris: #94a3b8;
     }
@@ -34,7 +40,6 @@
       overflow-x: hidden;
     }
     
-    /* Fond */
     body::before {
       content: '';
       position: fixed;
@@ -67,7 +72,7 @@
       50% { transform: translateX(-50%) scale(1.2); opacity: 1; }
     }
     
-    /* ========== HEADER ========== */
+    /* HEADER */
     header {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -79,7 +84,6 @@
       background: rgba(5,7,13,0.85);
       backdrop-filter: blur(20px);
       border-bottom: 1px solid rgba(0,212,255,0.1);
-      transition: all 0.3s;
     }
     
     .logo {
@@ -121,7 +125,6 @@
       margin-top: 2px;
     }
     
-    /* NAVIGATION ONGLETS */
     nav { display: flex; gap: 4px; align-items: center; }
     nav a {
       color: var(--gris);
@@ -132,7 +135,6 @@
       border-radius: 8px;
       transition: all 0.3s;
       cursor: pointer;
-      position: relative;
     }
     nav a:hover {
       color: var(--cyan);
@@ -153,9 +155,6 @@
     nav a.btn-nav:hover {
       box-shadow: 0 0 35px rgba(0,212,255,0.8);
       transform: translateY(-2px);
-    }
-    nav a.btn-nav.actif {
-      box-shadow: 0 0 35px rgba(0,212,255,0.9);
     }
     
     .hamburger {
@@ -184,7 +183,7 @@
     .hamburger.actif span:nth-child(2) { opacity: 0; }
     .hamburger.actif span:nth-child(3) { transform: rotate(-45deg); top: 50%; bottom: auto; }
     
-    /* ========== PAGES (ONGLETS) ========== */
+    /* PAGES */
     .page {
       display: none;
       min-height: 100vh;
@@ -202,7 +201,7 @@
       margin: auto;
     }
     
-    /* ========== ENTÊTE SECTION ========== */
+    /* ENTÊTE SECTION */
     .entete-section {
       text-align: center;
       margin-bottom: 70px;
@@ -257,7 +256,7 @@
       margin: 0 auto;
     }
     
-    /* ========== PAGE ACCUEIL ========== */
+    /* HERO ACCUEIL */
     .hero-accueil {
       min-height: 70vh;
       display: flex;
@@ -374,7 +373,63 @@
       transform: translateY(-3px);
     }
     
-    /* Aperçu services sur accueil */
+    /* COORDONNÉES RAPIDES */
+    .coords-rapides {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 50px;
+    }
+    .coord-card {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 18px 25px;
+      background: rgba(0,212,255,0.05);
+      border: 1px solid rgba(0,212,255,0.2);
+      border-radius: 14px;
+      text-decoration: none;
+      color: var(--blanc);
+      transition: all 0.3s;
+    }
+    .coord-card:hover {
+      background: rgba(0,212,255,0.12);
+      border-color: var(--cyan);
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(0,212,255,0.2);
+    }
+    .coord-card .ic {
+      width: 45px; height: 45px;
+      background: linear-gradient(135deg, var(--cyan), var(--violet));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .coord-card .ic svg {
+      width: 22px; height: 22px;
+      stroke: var(--noir);
+      stroke-width: 2.5;
+      fill: none;
+    }
+    .coord-card.wa .ic { background: linear-gradient(135deg, #25D366, #1eb855); }
+    .coord-card .info { text-align: left; }
+    .coord-card .info .lbl {
+      font-size: 0.7em;
+      color: var(--gris);
+      font-family: 'JetBrains Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 2px;
+    }
+    .coord-card .info .val {
+      font-weight: 700;
+      font-size: 0.95em;
+    }
+    
+    /* APERÇU SERVICES */
     .apercu-grille {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -426,7 +481,7 @@
       font-size: 0.9em;
     }
     
-    /* ========== STATS ========== */
+    /* STATS */
     .stats-section {
       position: relative;
       padding: 60px 5%;
@@ -435,7 +490,6 @@
       background: linear-gradient(135deg, rgba(0,212,255,0.05), rgba(124,58,237,0.05));
       border: 1px solid rgba(0,212,255,0.15);
       border-radius: 24px;
-      backdrop-filter: blur(10px);
     }
     .stats-grille {
       display: grid;
@@ -469,7 +523,7 @@
       text-transform: uppercase;
     }
     
-    /* ========== SERVICES DÉTAILLÉS ========== */
+    /* SERVICES DÉTAILLÉS */
     .service-detail {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -486,7 +540,6 @@
       border-color: rgba(0,212,255,0.4);
       box-shadow: 0 20px 60px rgba(0,212,255,0.1);
     }
-    .service-detail.inverse { grid-template-columns: 1fr 1fr; }
     .service-detail.inverse .service-detail-image { order: 2; }
     .service-detail.inverse .service-detail-texte { order: 1; }
     
@@ -495,7 +548,6 @@
       overflow: hidden;
       aspect-ratio: 4/3;
       border: 1px solid rgba(0,212,255,0.2);
-      position: relative;
     }
     .service-detail-image img {
       width: 100%; height: 100%;
@@ -558,7 +610,7 @@
       flex-shrink: 0;
     }
     
-    /* ========== GALERIE ========== */
+    /* GALERIE */
     .galerie {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -588,16 +640,6 @@
       transform: scale(1.1);
       filter: brightness(1) contrast(1.1);
     }
-    .galerie-item::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(0,212,255,0.15), transparent 50%, rgba(124,58,237,0.2));
-      opacity: 0;
-      transition: opacity 0.4s;
-      pointer-events: none;
-    }
-    .galerie-item:hover::after { opacity: 1; }
     .galerie-item .legende {
       position: absolute;
       bottom: 0; left: 0; right: 0;
@@ -609,7 +651,7 @@
       z-index: 2;
     }
     
-    /* ========== TARIFS ========== */
+    /* TARIFS */
     .tarifs-grille {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -716,7 +758,7 @@
       border: none;
     }
     
-    /* ========== À PROPOS ========== */
+    /* À PROPOS */
     .about-page {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -737,13 +779,6 @@
       object-fit: cover;
       filter: brightness(0.9) contrast(1.05);
     }
-    .about-page-image::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(0,212,255,0.15), transparent 50%, rgba(124,58,237,0.25));
-      z-index: 2;
-    }
     .about-page-image .info-card {
       position: absolute;
       top: 20px; right: 20px;
@@ -752,7 +787,6 @@
       padding: 12px 18px;
       border-radius: 12px;
       border: 1px solid rgba(0,212,255,0.4);
-      z-index: 3;
       text-align: center;
     }
     .about-page-image .info-card .num {
@@ -810,12 +844,6 @@
       border-radius: 10px;
       font-weight: 500;
       font-size: 0.9em;
-      transition: all 0.3s;
-    }
-    .about-point:hover {
-      background: rgba(0,212,255,0.1);
-      border-color: var(--cyan);
-      transform: translateY(-2px);
     }
     .about-point .check {
       width: 22px; height: 22px;
@@ -830,7 +858,7 @@
       flex-shrink: 0;
     }
     
-    /* ========== TÉMOIGNAGES ========== */
+    /* TÉMOIGNAGES */
     .temoignages-grille {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -842,7 +870,6 @@
       padding: 35px 30px;
       border-radius: 16px;
       border: 1px solid rgba(0,212,255,0.15);
-      transition: all 0.4s;
       position: relative;
     }
     .temoignage::before {
@@ -853,10 +880,6 @@
       color: rgba(0,212,255,0.15);
       font-family: Georgia, serif;
       line-height: 1;
-    }
-    .temoignage:hover {
-      transform: translateY(-5px);
-      border-color: var(--cyan);
     }
     .etoiles {
       color: #fbbf24;
@@ -897,7 +920,7 @@
       font-family: 'JetBrains Mono', monospace;
     }
     
-    /* ========== CONTACT ========== */
+    /* CONTACT */
     .contact-grille {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -938,6 +961,8 @@
       border: 1px solid rgba(0,212,255,0.1);
       border-radius: 12px;
       transition: all 0.3s;
+      text-decoration: none;
+      cursor: pointer;
     }
     .contact-detail:hover {
       background: rgba(0,212,255,0.08);
@@ -971,7 +996,6 @@
       background: linear-gradient(135deg, rgba(17,24,39,0.8), rgba(5,7,13,0.8));
       border: 1px solid rgba(0,212,255,0.2);
       border-radius: 20px;
-      backdrop-filter: blur(10px);
     }
     .formulaire h3 {
       font-family: 'Space Grotesk', sans-serif;
@@ -1005,7 +1029,6 @@
       outline: none;
       border-color: var(--cyan);
       box-shadow: 0 0 20px rgba(0,212,255,0.3);
-      background: rgba(5,7,13,0.8);
     }
     .form-groupe select option {
       background: var(--noir-2);
@@ -1032,7 +1055,6 @@
       box-shadow: 0 0 45px rgba(0,212,255,0.7);
     }
     
-    /* Localisation */
     .loc-carte {
       max-width: 100%;
       margin: 50px auto 0;
@@ -1074,7 +1096,6 @@
       justify-content: center;
       box-shadow: 0 0 40px rgba(0,212,255,0.8);
       animation: pulsePin 2s ease-in-out infinite;
-      position: relative;
     }
     @keyframes pulsePin {
       0%, 100% { box-shadow: 0 0 40px rgba(0,212,255,0.8); }
@@ -1086,9 +1107,7 @@
       stroke-width: 2.5;
       fill: none;
     }
-    .loc-info {
-      padding: 40px;
-    }
+    .loc-info { padding: 40px; }
     .loc-info h3 {
       font-family: 'Space Grotesk', sans-serif;
       font-size: 1.6em;
@@ -1115,13 +1134,13 @@
     .loc-ligne strong { color: var(--blanc); font-weight: 600; }
     .loc-ligne span { color: var(--gris); }
     
-    /* ========== WHATSAPP FLOTTANT ========== */
+    /* WHATSAPP FLOTTANT */
     .wa-flottant {
       position: fixed;
       bottom: 30px;
       right: 30px;
       width: 65px; height: 65px;
-      background: linear-gradient(135deg, #25D366, #1eb855);
+      background: linear-gradient(135deg, var(--vert-wa), #1eb855);
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -1138,7 +1157,7 @@
       position: absolute;
       inset: 0;
       border-radius: 50%;
-      border: 2px solid #25D366;
+      border: 2px solid var(--vert-wa);
       animation: ring 2s ease-out infinite;
     }
     @keyframes ring {
@@ -1155,7 +1174,29 @@
       box-shadow: 0 0 50px rgba(37,211,102,1);
     }
     
-    /* Toast */
+    /* EMAIL FLOTTANT */
+    .email-flottant {
+      position: fixed;
+      bottom: 110px;
+      right: 30px;
+      width: 55px; height: 55px;
+      background: linear-gradient(135deg, var(--cyan), var(--violet));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+      box-shadow: 0 0 25px rgba(0,212,255,0.6);
+      transition: all 0.3s;
+      text-decoration: none;
+    }
+    .email-flottant svg { width: 24px; height: 24px; stroke: var(--blanc); stroke-width: 2; fill: none; }
+    .email-flottant:hover {
+      transform: scale(1.15);
+      box-shadow: 0 0 45px rgba(0,212,255,1);
+    }
+    
+    /* TOAST */
     .toast {
       position: fixed;
       bottom: 30px;
@@ -1190,7 +1231,7 @@
       flex-shrink: 0;
     }
     
-    /* ========== FOOTER ========== */
+    /* FOOTER */
     footer {
       background: var(--noir-2);
       padding: 50px 5% 30px;
@@ -1231,7 +1272,7 @@
     }
     .footer-bas .cyan { color: var(--cyan); }
     
-    /* ========== RESPONSIVE ========== */
+    /* RESPONSIVE */
     @media (max-width: 900px) {
       .service-detail,
       .service-detail.inverse { grid-template-columns: 1fr; }
@@ -1276,6 +1317,9 @@
       .entete-section h2 { font-size: 2em; }
       .page { padding: 110px 20px 60px; }
       
+      .coords-rapides { flex-direction: column; align-items: stretch; }
+      .coord-card { justify-content: center; }
+      
       .service-detail { padding: 30px 20px; }
       .service-detail-texte h3 { font-size: 1.5em; }
       
@@ -1293,6 +1337,8 @@
       
       .wa-flottant { width: 55px; height: 55px; bottom: 20px; right: 20px; }
       .wa-flottant svg { width: 26px; height: 26px; }
+      .email-flottant { width: 48px; height: 48px; bottom: 85px; right: 20px; }
+      .email-flottant svg { width: 20px; height: 20px; }
       
       .logo-hex { width: 38px; height: 38px; }
       .logo-texte .haut { font-size: 1.1em; }
@@ -1351,13 +1397,43 @@
           <h1>Réparation & Vente<br><span class="gradient">Tech Premium</span> à Lomé</h1>
           <p>Téléphones • Ordinateurs • Accessoires. Un service de qualité, une garantie, un prix juste.</p>
           <div class="hero-btns">
-            <a onclick="ouvrirPage('contact')" class="btn-neon">📞 Nous contacter</a>
+            <a href="https://wa.me/22870833390?text=Bonjour%202S%20BUSINESS,%20je%20vous%20contacte%20depuis%20votre%20site" target="_blank" class="btn-neon">📱 WhatsApp direct</a>
             <a onclick="ouvrirPage('services')" class="btn-ghost">Voir nos services →</a>
+          </div>
+          
+          <!-- Coordonnées rapides -->
+          <div class="coords-rapides">
+            <a href="tel:+22870833390" class="coord-card">
+              <div class="ic">
+                <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div class="info">
+                <div class="lbl">Appeler</div>
+                <div class="val">+228 70 83 33 90</div>
+              </div>
+            </a>
+            <a href="https://wa.me/22870833390" target="_blank" class="coord-card wa">
+              <div class="ic">
+                <svg viewBox="0 0 24 24" style="stroke:none;fill:var(--noir);"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              </div>
+              <div class="info">
+                <div class="lbl">WhatsApp</div>
+                <div class="val">+228 70 83 33 90</div>
+              </div>
+            </a>
+            <a href="mailto:msouleman28@gmail.com" class="coord-card">
+              <div class="ic">
+                <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div class="info">
+                <div class="lbl">Email</div>
+                <div class="val">msouleman28@gmail.com</div>
+              </div>
+            </a>
           </div>
         </div>
       </div>
       
-      <!-- Aperçu services -->
       <div class="apercu-grille">
         <div class="apercu-card" onclick="ouvrirPage('services')">
           <div class="apercu-image">
@@ -1388,7 +1464,6 @@
         </div>
       </div>
       
-      <!-- Stats -->
       <div class="stats-section">
         <div class="stats-grille">
           <div class="stat-item">
@@ -1412,9 +1487,7 @@
     </div>
   </div>
 
-  <!-- ============================================================
-       PAGE SERVICES
-  ============================================================ -->
+  <!-- PAGE SERVICES -->
   <div class="page" id="page-services">
     <div class="page-contenu">
       <div class="entete-section">
@@ -1430,7 +1503,7 @@
         <div class="service-detail-texte">
           <div class="service-detail-num">// 01</div>
           <h3>Réparation <span class="gradient">Téléphone</span></h3>
-          <p>Écran cassé, batterie usée, bouton défaillant, carte mère, problème logiciel... Nous réparons toutes les marques avec précision et des pièces de qualité.</p>
+          <p>Écran cassé, batterie usée, bouton défaillant, carte mère, problème logiciel... Nous réparons toutes les marques avec précision.</p>
           <ul class="service-liste">
             <li>Écran cassé ou fissuré</li>
             <li>Batterie qui ne tient plus</li>
@@ -1439,6 +1512,7 @@
             <li>Problème logiciel / système</li>
             <li>Caméra, haut-parleur, micro</li>
           </ul>
+          <a href="https://wa.me/22870833390?text=Bonjour,%20je%20souhaite%20faire%20réparer%20mon%20téléphone" target="_blank" class="btn-neon" style="margin-top: 15px;">Demander un devis →</a>
         </div>
       </div>
       
@@ -1453,11 +1527,12 @@
           <ul class="service-liste">
             <li>Nettoyage et dépoussiérage</li>
             <li>Remplacement écran / clavier</li>
-            <li>Installation système Windows/Mac</li>
+            <li>Installation Windows/Mac</li>
             <li>Récupération de données</li>
             <li>Changement disque dur / SSD</li>
             <li>Réparation carte mère</li>
           </ul>
+          <a href="https://wa.me/22870833390?text=Bonjour,%20je%20souhaite%20faire%20réparer%20mon%20ordinateur" target="_blank" class="btn-neon" style="margin-top: 15px;">Demander un devis →</a>
         </div>
       </div>
       
@@ -1468,7 +1543,7 @@
         <div class="service-detail-texte">
           <div class="service-detail-num">// 03</div>
           <h3>Vente <span class="gradient">d'Appareils</span></h3>
-          <p>Téléphones, ordinateurs, tablettes et accessoires neufs ou en bon état, à des prix attractifs. Nous vous conseillons selon votre budget.</p>
+          <p>Téléphones, ordinateurs, tablettes et accessoires neufs ou en bon état, à des prix attractifs.</p>
           <ul class="service-liste">
             <li>Téléphones neufs et occasion</li>
             <li>Ordinateurs portables et fixes</li>
@@ -1477,14 +1552,13 @@
             <li>Coques, protections, câbles</li>
             <li>Conseils d'achat personnalisés</li>
           </ul>
+          <a href="https://wa.me/22870833390?text=Bonjour,%20je%20souhaite%20acheter%20un%20appareil" target="_blank" class="btn-neon" style="margin-top: 15px;">Voir les prix →</a>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- ============================================================
-       PAGE GALERIE
-  ============================================================ -->
+  <!-- PAGE GALERIE -->
   <div class="page" id="page-galerie">
     <div class="page-contenu">
       <div class="entete-section">
@@ -1530,9 +1604,7 @@
     </div>
   </div>
 
-  <!-- ============================================================
-       PAGE TARIFS
-  ============================================================ -->
+  <!-- PAGE TARIFS -->
   <div class="page" id="page-tarifs">
     <div class="page-contenu">
       <div class="entete-section">
@@ -1552,7 +1624,7 @@
             <li>Conseils personnalisés</li>
             <li>Sans engagement</li>
           </ul>
-          <a href="https://wa.me/228XXXXXXXX?text=Bonjour,%20je%20souhaite%20un%20diagnostic%20gratuit" class="tarif-btn">Demander</a>
+          <a href="https://wa.me/22870833390?text=Bonjour,%20je%20souhaite%20un%20diagnostic%20gratuit" target="_blank" class="tarif-btn">Demander</a>
         </div>
         
         <div class="tarif-card populaire">
@@ -1565,7 +1637,7 @@
             <li>Pièces de qualité</li>
             <li>Garantie 1 mois</li>
           </ul>
-          <a href="https://wa.me/228XXXXXXXX?text=Bonjour,%20je%20souhaite%20une%20réparation" class="tarif-btn">Demander</a>
+          <a href="https://wa.me/22870833390?text=Bonjour,%20je%20souhaite%20une%20réparation" target="_blank" class="tarif-btn">Demander</a>
         </div>
         
         <div class="tarif-card">
@@ -1578,11 +1650,10 @@
             <li>Accessoires</li>
             <li>Conseils d'achat</li>
           </ul>
-          <a href="https://wa.me/228XXXXXXXX?text=Bonjour,%20je%20souhaite%20acheter%20un%20appareil" class="tarif-btn">Demander</a>
+          <a href="https://wa.me/22870833390?text=Bonjour,%20je%20souhaite%20acheter%20un%20appareil" target="_blank" class="tarif-btn">Demander</a>
         </div>
       </div>
       
-      <!-- Témoignages -->
       <div class="entete-section" style="margin-top: 90px;">
         <div class="tag">Avis clients</div>
         <h2>Ce qu'ils <span class="gradient">disent</span></h2>
@@ -1627,9 +1698,7 @@
     </div>
   </div>
 
-  <!-- ============================================================
-       PAGE À PROPOS
-  ============================================================ -->
+  <!-- PAGE À PROPOS -->
   <div class="page" id="page-apropos">
     <div class="page-contenu">
       <div class="entete-section">
@@ -1667,7 +1736,6 @@
         </div>
       </div>
       
-      <!-- Localisation -->
       <div class="entete-section" style="margin-top: 60px;">
         <div class="tag">Nous rendre visite</div>
         <h2>Où nous <span class="gradient">trouver</span></h2>
@@ -1705,9 +1773,7 @@
     </div>
   </div>
 
-  <!-- ============================================================
-       PAGE CONTACT
-  ============================================================ -->
+  <!-- PAGE CONTACT -->
   <div class="page" id="page-contact">
     <div class="page-contenu">
       <div class="entete-section">
@@ -1719,18 +1785,36 @@
       <div class="contact-grille">
         <div class="contact-info">
           <h2>Nos <span class="gradient">coordonnées</span></h2>
-          <p>Nous répondons rapidement par téléphone, WhatsApp ou sur place.</p>
+          <p>Nous répondons rapidement par téléphone, WhatsApp ou email.</p>
           <div class="contact-details">
-            <div class="contact-detail">
+            <a href="https://wa.me/22870833390" target="_blank" class="contact-detail">
+              <div class="contact-detail-icon" style="background: rgba(37,211,102,0.15); border-color: rgba(37,211,102,0.4);">
+                <svg viewBox="0 0 24 24" style="stroke: var(--vert-wa);"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              </div>
+              <div>
+                <strong>WhatsApp (préféré)</strong>
+                <span>+228 70 83 33 90</span>
+              </div>
+            </a>
+            <a href="tel:+22870833390" class="contact-detail">
               <div class="contact-detail-icon">
                 <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
               </div>
               <div>
-                <strong>Téléphone / WhatsApp</strong>
-                <span>+228 XX XX XX XX</span>
+                <strong>Téléphone</strong>
+                <span>+228 70 83 33 90</span>
               </div>
-            </div>
-            <div class="contact-detail">
+            </a>
+            <a href="mailto:msouleman28@gmail.com" class="contact-detail">
+              <div class="contact-detail-icon">
+                <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <strong>Email</strong>
+                <span>msouleman28@gmail.com</span>
+              </div>
+            </a>
+            <div class="contact-detail" style="cursor: default;">
               <div class="contact-detail-icon">
                 <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
               </div>
@@ -1739,7 +1823,7 @@
                 <span>Lomé, Agoè Catholique — Face Hôtel LKG2</span>
               </div>
             </div>
-            <div class="contact-detail">
+            <div class="contact-detail" style="cursor: default;">
               <div class="contact-detail-icon">
                 <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
               </div>
@@ -1777,9 +1861,13 @@
     </div>
   </div>
 
-  <!-- WHATSAPP FLOTTANT -->
-  <a href="https://wa.me/228XXXXXXXX" class="wa-flottant" title="WhatsApp" onclick="toast('Redirection vers WhatsApp...')">
+  <!-- BOUTONS FLOTTANTS -->
+  <a href="https://wa.me/22870833390?text=Bonjour%202S%20BUSINESS,%20je%20vous%20contacte%20depuis%20votre%20site" target="_blank" class="wa-flottant" title="WhatsApp : +228 70 83 33 90">
     <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <a href="mailto:msouleman28@gmail.com?subject=Contact%20depuis%20le%20site%202S%20BUSINESS" class="email-flottant" title="Email : msouleman28@gmail.com">
+    <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
   </a>
 
   <!-- TOAST -->
@@ -1795,6 +1883,8 @@
         <h4>2S BUSINESS</h4>
         <p>Votre expert en réparation et vente de téléphones, ordinateurs et accessoires à Lomé.</p>
         <p style="margin-top: 15px;">Fondée par Mr MOHAMED Souleman</p>
+        <p style="margin-top: 15px;">📱 <a href="https://wa.me/22870833390" style="display: inline; color: var(--vert-wa);">+228 70 83 33 90</a></p>
+        <p>📧 <a href="mailto:msouleman28@gmail.com" style="display: inline;">msouleman28@gmail.com</a></p>
       </div>
       <div class="footer-col">
         <h4>Navigation</h4>
@@ -1819,52 +1909,32 @@
   </footer>
 
   <script>
-    /* ========== NAVIGATION ONGLETS ========== */
     function ouvrirPage(nom) {
-      // Cacher toutes les pages
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-      
-      // Afficher la page demandée
       const page = document.getElementById('page-' + nom);
       if (page) {
         page.classList.add('active');
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
-      
-      // Mettre à jour l'onglet actif
       document.querySelectorAll('nav a[data-page]').forEach(a => {
         a.classList.toggle('actif', a.dataset.page === nom);
       });
-      
-      // Fermer le menu mobile
       fermerMenu();
-      
-      // Mettre à jour l'URL
-      if (history.pushState) {
-        history.pushState(null, '', '#' + nom);
-      } else {
-        location.hash = '#' + nom;
-      }
-      
-      // Réinitialiser les animations des stats (si accueil)
-      if (nom === 'accueil') {
-        setTimeout(animerStats, 100);
-      }
+      if (history.pushState) history.pushState(null, '', '#' + nom);
+      else location.hash = '#' + nom;
+      if (nom === 'accueil') setTimeout(animerStats, 100);
     }
     
-    /* Au chargement : ouvrir la page selon l'URL */
     window.addEventListener('DOMContentLoaded', () => {
       const hash = window.location.hash.replace('#', '') || 'accueil';
       ouvrirPage(hash);
     });
     
-    /* Gérer le bouton retour du navigateur */
     window.addEventListener('popstate', () => {
       const hash = window.location.hash.replace('#', '') || 'accueil';
       ouvrirPage(hash);
     });
     
-    /* ========== MENU MOBILE ========== */
     function toggleMenu() {
       document.getElementById('menu').classList.toggle('ouvert');
       document.getElementById('hamburger').classList.toggle('actif');
@@ -1874,7 +1944,6 @@
       document.getElementById('hamburger').classList.remove('actif');
     }
     
-    /* ========== STATS ANIMÉES ========== */
     function animerStats() {
       document.querySelectorAll('.stat-nombre').forEach(el => {
         const cible = parseInt(el.dataset.cible);
@@ -1895,7 +1964,6 @@
     }
     setTimeout(animerStats, 300);
     
-    /* ========== TOAST ========== */
     let toastTimeout;
     function toast(message) {
       const t = document.getElementById('toast');
@@ -1905,7 +1973,6 @@
       toastTimeout = setTimeout(() => t.classList.remove('visible'), 3000);
     }
     
-    /* ========== FORMULAIRE ========== */
     function envoyerFormulaire(e) {
       e.preventDefault();
       const nom = document.getElementById('nom').value;
@@ -1914,7 +1981,7 @@
       const texte = `Bonjour 2S BUSINESS !%0A%0ANom : ${nom}%0ASujet : ${sujet}%0AMessage : ${message}`;
       toast('Redirection vers WhatsApp...');
       setTimeout(() => {
-        window.open(`https://wa.me/228XXXXXXXX?text=${texte}`, '_blank');
+        window.open(`https://wa.me/22870833390?text=${texte}`, '_blank');
       }, 800);
     }
   </script>
