@@ -180,17 +180,6 @@
     .about-point { display: flex; align-items: center; gap: 12px; padding: 12px 16px; background: rgba(0,212,255,0.05); border: 1px solid rgba(0,212,255,0.15); border-radius: 10px; font-weight: 500; font-size: 0.9em; }
     .about-point .check { width: 22px; height: 22px; background: linear-gradient(135deg, var(--cyan), var(--bleu)); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--noir); font-size: 0.7em; font-weight: 700; flex-shrink: 0; }
     
-    .temoignages-grille { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 50px; }
-    .temoignage { background: linear-gradient(135deg, rgba(17,24,39,0.8), rgba(5,7,13,0.8)); padding: 35px 30px; border-radius: 16px; border: 1px solid rgba(0,212,255,0.15); position: relative; }
-    .temoignage::before { content: '"'; position: absolute; top: 10px; right: 25px; font-size: 5em; color: rgba(0,212,255,0.15); font-family: Georgia, serif; line-height: 1; }
-    .etoiles { color: #fbbf24; font-size: 1.1em; margin-bottom: 15px; letter-spacing: 3px; }
-    .temoignage p { color: var(--gris); font-style: italic; margin-bottom: 20px; line-height: 1.7; }
-    .temoignage-auteur { display: flex; align-items: center; gap: 12px; }
-    .avatar { width: 45px; height: 45px; border-radius: 50%; overflow: hidden; border: 2px solid var(--cyan); flex-shrink: 0; }
-    .avatar img { width: 100%; height: 100%; object-fit: cover; }
-    .auteur-info .nom { color: var(--blanc); font-weight: 600; font-size: 0.95em; }
-    .auteur-info .role { color: var(--gris); font-size: 0.8em; font-family: 'JetBrains Mono', monospace; }
-    
     .contact-grille { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
     .contact-info h2 { font-family: 'Space Grotesk', sans-serif; font-size: 2.4em; font-weight: 700; margin-bottom: 20px; letter-spacing: -1px; line-height: 1.1; }
     .contact-info h2 .gradient { background: linear-gradient(135deg, var(--cyan), var(--violet)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
@@ -475,7 +464,7 @@
     </div>
   </div>
 
-  <!-- PAGE TARIFS -->
+  <!-- PAGE TARIFS (SANS AVIS) -->
   <div class="page" id="page-tarifs">
     <div class="page-contenu">
       <div class="entete-section">
@@ -504,29 +493,6 @@
           <div class="tarif-duree">Selon le modèle</div>
           <ul class="tarif-liste"><li>Téléphones neufs</li><li>Ordinateurs</li><li>Accessoires</li><li>Conseils d'achat</li></ul>
           <a href="https://wa.me/22870833390?text=Bonjour,%20je%20souhaite%20acheter%20un%20appareil" target="_blank" class="tarif-btn">Demander</a>
-        </div>
-      </div>
-      
-      <div class="entete-section" style="margin-top: 90px;">
-        <div class="tag">Avis clients</div>
-        <h2>Ce qu'ils <span class="gradient">disent</span></h2>
-        <p>Des centaines de clients satisfaits à Lomé.</p>
-      </div>
-      <div class="temoignages-grille" style="margin-top: 0;">
-        <div class="temoignage">
-          <div class="etoiles">★★★★★</div>
-          <p>« Mon iPhone ne s'allumait plus. En 2 heures, Souleman l'a réparé. Travail rapide et prix très correct. Je recommande ! »</p>
-          <div class="temoignage-auteur"><div class="avatar"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Kossi"></div><div class="auteur-info"><div class="nom">Kossi A.</div><div class="role">Client · Lomé</div></div></div>
-        </div>
-        <div class="temoignage">
-          <div class="etoiles">★★★★★</div>
-          <p>« J'ai acheté mon ordinateur portable chez 2S BUSINESS. Bon prix, bon conseil, et le service après-vente est vraiment top. »</p>
-          <div class="temoignage-auteur"><div class="avatar"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Afi"></div><div class="auteur-info"><div class="nom">Afi M.</div><div class="role">Cliente · Agoè</div></div></div>
-        </div>
-        <div class="temoignage">
-          <div class="etoiles">★★★★★</div>
-          <p>« Écran cassé, il me l'a remplacé avec une pièce d'origine. Le téléphone est comme neuf. Merci ! »</p>
-          <div class="temoignage-auteur"><div class="avatar"><img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Jean"></div><div class="auteur-info"><div class="nom">Jean D.</div><div class="role">Client · Adidogomé</div></div></div>
         </div>
       </div>
     </div>
