@@ -1,0 +1,1990 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2S BUSINESS — Réparation & Vente Tech à Lomé | 70 83 33 90</title>
+  <meta name="description" content="2S BUSINESS à Lomé : réparation téléphones & ordinateurs, vente d'appareils et accessoires. Agoè Catholique, face Hôtel LKG2. ☎ +228 70 83 33 90">
+  <meta property="og:title" content="2S BUSINESS — Tech Repair & Store à Lomé">
+  <meta property="og:description" content="Réparation téléphones & ordinateurs, vente d'appareils et accessoires. ☎ +228 70 83 33 90">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=1200">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><polygon points='50,5 90,27 90,73 50,95 10,73 10,27' fill='none' stroke='%2300d4ff' stroke-width='4'/><text x='50' y='65' text-anchor='middle' font-size='40' font-weight='bold' fill='%2300d4ff'>2S</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    :root {
+      --noir: #05070d;
+      --noir-2: #0a0e1a;
+      --noir-3: #111827;
+      --cyan: #00d4ff;
+      --violet: #7c3aed;
+      --bleu: #3b82f6;
+      --vert-neon: #00ff88;
+      --vert-wa: #25D366;
+      --blanc: #ffffff;
+      --gris: #94a3b8;
+    }
+    
+    html { scroll-behavior: smooth; }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--noir);
+      color: var(--blanc);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: 
+        linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px);
+      background-size: 50px 50px;
+      z-index: -2;
+      pointer-events: none;
+      animation: gridMove 20s linear infinite;
+    }
+    @keyframes gridMove { to { background-position: 50px 50px; } }
+    
+    body::after {
+      content: '';
+      position: fixed;
+      top: -50%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(0,212,255,0.15) 0%, transparent 60%);
+      z-index: -1;
+      pointer-events: none;
+      animation: pulseGlow 8s ease-in-out infinite;
+    }
+    @keyframes pulseGlow {
+      0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.6; }
+      50% { transform: translateX(-50%) scale(1.2); opacity: 1; }
+    }
+    
+    /* HEADER */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 16px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(5,7,13,0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(0,212,255,0.1);
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .logo-hex {
+      position: relative;
+      width: 46px; height: 46px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.4s;
+    }
+    .logo-hex svg {
+      width: 100%; height: 100%;
+      filter: drop-shadow(0 0 10px rgba(0,212,255,0.5));
+    }
+    .logo:hover .logo-hex { transform: rotate(-10deg) scale(1.05); }
+    .logo-texte { display: flex; flex-direction: column; line-height: 1.1; }
+    .logo-texte .haut {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.3em;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--cyan), var(--violet));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: 1px;
+    }
+    .logo-texte .bas {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65em;
+      color: var(--gris);
+      letter-spacing: 2px;
+      margin-top: 2px;
+    }
+    
+    nav { display: flex; gap: 4px; align-items: center; }
+    nav a {
+      color: var(--gris);
+      text-decoration: none;
+      font-size: 0.9em;
+      font-weight: 500;
+      padding: 10px 18px;
+      border-radius: 8px;
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+    nav a:hover {
+      color: var(--cyan);
+      background: rgba(0,212,255,0.08);
+    }
+    nav a.actif {
+      color: var(--noir);
+      background: linear-gradient(135deg, var(--cyan), var(--bleu));
+      box-shadow: 0 0 20px rgba(0,212,255,0.5);
+    }
+    nav a.btn-nav {
+      background: linear-gradient(135deg, var(--cyan), var(--bleu));
+      color: var(--noir);
+      font-weight: 700;
+      padding: 10px 24px;
+      box-shadow: 0 0 20px rgba(0,212,255,0.4);
+    }
+    nav a.btn-nav:hover {
+      box-shadow: 0 0 35px rgba(0,212,255,0.8);
+      transform: translateY(-2px);
+    }
+    
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      width: 30px; height: 24px;
+      position: relative;
+      z-index: 1001;
+    }
+    .hamburger span {
+      display: block;
+      height: 2px;
+      background: var(--cyan);
+      border-radius: 2px;
+      position: absolute;
+      width: 100%;
+      transition: all 0.3s;
+      box-shadow: 0 0 8px var(--cyan);
+    }
+    .hamburger span:nth-child(1) { top: 0; }
+    .hamburger span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+    .hamburger span:nth-child(3) { bottom: 0; }
+    .hamburger.actif span:nth-child(1) { transform: rotate(45deg); top: 50%; }
+    .hamburger.actif span:nth-child(2) { opacity: 0; }
+    .hamburger.actif span:nth-child(3) { transform: rotate(-45deg); top: 50%; bottom: auto; }
+    
+    /* PAGES */
+    .page {
+      display: none;
+      min-height: 100vh;
+      padding: 130px 5% 80px;
+      animation: fadeIn 0.5s ease;
+    }
+    .page.active { display: block; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .page-contenu {
+      max-width: 1300px;
+      margin: auto;
+    }
+    
+    /* ENTÊTE SECTION */
+    .entete-section {
+      text-align: center;
+      margin-bottom: 70px;
+    }
+    .entete-section .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      background: rgba(0,212,255,0.08);
+      border: 1px solid rgba(0,212,255,0.25);
+      border-radius: 20px;
+      color: var(--cyan);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75em;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .entete-section .tag::before { content: '//'; opacity: 0.6; }
+    .entete-section .tag::after {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--cyan);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--cyan);
+      animation: blink 2s infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+    .entete-section h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 3.2em;
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+    }
+    .entete-section h2 .gradient {
+      background: linear-gradient(135deg, var(--cyan), var(--violet));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .entete-section p {
+      color: var(--gris);
+      font-size: 1.1em;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    /* HERO ACCUEIL */
+    .hero-accueil {
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .hero-accueil h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 4em;
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 25px;
+      letter-spacing: -1px;
+    }
+    .hero-accueil h1 .gradient {
+      background: linear-gradient(135deg, var(--cyan) 0%, var(--violet) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-accueil p {
+      font-size: 1.2em;
+      color: var(--gris);
+      max-width: 650px;
+      margin: 0 auto 40px;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 20px;
+      background: rgba(0,212,255,0.08);
+      border: 1px solid rgba(0,212,255,0.3);
+      border-radius: 30px;
+      color: var(--cyan);
+      font-size: 0.75em;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .hero-badge::before {
+      content: '';
+      width: 8px; height: 8px;
+      background: var(--vert-neon);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--vert-neon);
+      animation: blink 1.5s infinite;
+    }
+    
+    .hero-btns {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .btn-neon {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 38px;
+      background: linear-gradient(135deg, var(--cyan) 0%, var(--bleu) 100%);
+      color: var(--noir);
+      font-weight: 700;
+      font-size: 1em;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      text-decoration: none;
+      font-family: inherit;
+      box-shadow: 0 0 30px rgba(0,212,255,0.4);
+      transition: all 0.3s;
+      overflow: hidden;
+    }
+    .btn-neon::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+      transition: left 0.6s;
+    }
+    .btn-neon:hover::before { left: 100%; }
+    .btn-neon:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 50px rgba(0,212,255,0.8);
+    }
+    
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 38px;
+      background: rgba(255,255,255,0.03);
+      color: var(--blanc);
+      font-weight: 600;
+      font-size: 1em;
+      border: 1px solid rgba(0,212,255,0.3);
+      border-radius: 10px;
+      cursor: pointer;
+      text-decoration: none;
+      font-family: inherit;
+      transition: all 0.3s;
+    }
+    .btn-ghost:hover {
+      background: rgba(0,212,255,0.1);
+      border-color: var(--cyan);
+      color: var(--cyan);
+      transform: translateY(-3px);
+    }
+    
+    /* COORDONNÉES RAPIDES */
+    .coords-rapides {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 50px;
+    }
+    .coord-card {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 18px 25px;
+      background: rgba(0,212,255,0.05);
+      border: 1px solid rgba(0,212,255,0.2);
+      border-radius: 14px;
+      text-decoration: none;
+      color: var(--blanc);
+      transition: all 0.3s;
+    }
+    .coord-card:hover {
+      background: rgba(0,212,255,0.12);
+      border-color: var(--cyan);
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(0,212,255,0.2);
+    }
+    .coord-card .ic {
+      width: 45px; height: 45px;
+      background: linear-gradient(135deg, var(--cyan), var(--violet));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .coord-card .ic svg {
+      width: 22px; height: 22px;
+      stroke: var(--noir);
+      stroke-width: 2.5;
+      fill: none;
+    }
+    .coord-card.wa .ic { background: linear-gradient(135deg, #25D366, #1eb855); }
+    .coord-card .info { text-align: left; }
+    .coord-card .info .lbl {
+      font-size: 0.7em;
+      color: var(--gris);
+      font-family: 'JetBrains Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 2px;
+    }
+    .coord-card .info .val {
+      font-weight: 700;
+      font-size: 0.95em;
+    }
+    
+    /* APERÇU SERVICES */
+    .apercu-grille {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 60px;
+    }
+    .apercu-card {
+      background: linear-gradient(135deg, rgba(17,24,39,0.9), rgba(5,7,13,0.9));
+      border: 1px solid rgba(0,212,255,0.15);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: all 0.4s;
+      cursor: pointer;
+    }
+    .apercu-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--cyan);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.4), 0 0 40px rgba(0,212,255,0.2);
+    }
+    .apercu-image {
+      height: 160px;
+      overflow: hidden;
+      position: relative;
+    }
+    .apercu-image img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s;
+      filter: brightness(0.75) contrast(1.1);
+    }
+    .apercu-card:hover .apercu-image img { transform: scale(1.1); }
+    .apercu-image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 40%, rgba(5,7,13,0.95) 100%);
+    }
+    .apercu-corps {
+      padding: 20px 25px 25px;
+    }
+    .apercu-corps h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.2em;
+      margin-bottom: 8px;
+      color: var(--blanc);
+    }
+    .apercu-corps p {
+      color: var(--gris);
+      font-size: 0.9em;
+    }
+    
+    /* STATS */
+    .stats-section {
+      position: relative;
+      padding: 60px 5%;
+      max-width: 1200px;
+      margin: 60px auto;
+      background: linear-gradient(135deg, rgba(0,212,255,0.05), rgba(124,58,237,0.05));
+      border: 1px solid rgba(0,212,255,0.15);
+      border-radius: 24px;
+    }
+    .stats-grille {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 30px;
+    }
+    .stat-item {
+      text-align: center;
+      padding: 15px;
+      border-right: 1px solid rgba(0,212,255,0.15);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-nombre {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 3em;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--cyan), var(--violet));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin-bottom: 8px;
+      display: block;
+      letter-spacing: -2px;
+    }
+    .stat-label {
+      color: var(--gris);
+      font-size: 0.8em;
+      font-family: 'JetBrains Mono', monospace;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    
+    /* SERVICES DÉTAILLÉS */
+    .service-detail {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      padding: 50px;
+      background: linear-gradient(135deg, rgba(17,24,39,0.6), rgba(5,7,13,0.6));
+      border: 1px solid rgba(0,212,255,0.15);
+      border-radius: 24px;
+      margin-bottom: 40px;
+      transition: all 0.4s;
+    }
+    .service-detail:hover {
+      border-color: rgba(0,212,255,0.4);
+      box-shadow: 0 20px 60px rgba(0,212,255,0.1);
+    }
+    .service-detail.inverse .service-detail-image { order: 2; }
+    .service-detail.inverse .service-detail-texte { order: 1; }
+    
+    .service-detail-image {
+      border-radius: 16px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      border: 1px solid rgba(0,212,255,0.2);
+    }
+    .service-detail-image img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      filter: brightness(0.85) contrast(1.1);
+      transition: transform 0.6s;
+    }
+    .service-detail:hover .service-detail-image img { transform: scale(1.05); }
+    
+    .service-detail-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85em;
+      color: var(--cyan);
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+      opacity: 0.7;
+    }
+    .service-detail-texte h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2em;
+      font-weight: 700;
+      margin-bottom: 20px;
+      letter-spacing: -0.5px;
+    }
+    .service-detail-texte h3 .gradient {
+      background: linear-gradient(135deg, var(--cyan), var(--violet));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .service-detail-texte p {
+      color: var(--gris);
+      font-size: 1.05em;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    .service-liste {
+      list-style: none;
+      margin: 25px 0;
+    }
+    .service-liste li {
+      padding: 10px 0;
+      color: var(--gris);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.95em;
+    }
+    .service-liste li::before {
+      content: '✓';
+      width: 22px; height: 22px;
+      background: linear-gradient(135deg, var(--cyan), var(--bleu));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--noir);
+      font-weight: 700;
+      font-size: 0.7em;
+      flex-shrink: 0;
+    }
+    
+    /* GALERIE */
+    .galerie {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .galerie-item {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(0,212,255,0.15);
+      transition: all 0.4s;
+      cursor: pointer;
+      aspect-ratio: 1;
+    }
+    .galerie-item:hover {
+      border-color: var(--cyan);
+      box-shadow: 0 0 40px rgba(0,212,255,0.3);
+      transform: scale(1.02);
+    }
+    .galerie-item img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s;
+      filter: brightness(0.8) contrast(1.1);
+    }
+    .galerie-item:hover img {
+      transform: scale(1.1);
+      filter: brightness(1) contrast(1.1);
+    }
+    .galerie-item .legende {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 20px 20px 15px;
+      background: linear-gradient(to top, rgba(5,7,13,0.95), transparent);
+      color: var(--blanc);
+      font-weight: 600;
+      font-size: 0.95em;
+      z-index: 2;
+    }
+    
+    /* TARIFS */
+    .tarifs-grille {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+    .tarif-card {
+      background: linear-gradient(135deg, rgba(17,24,39,0.8), rgba(5,7,13,0.8));
+      padding: 45px 30px;
+      border-radius: 16px;
+      border: 1px solid rgba(0,212,255,0.15);
+      text-align: center;
+      transition: all 0.4s;
+      position: relative;
+    }
+    .tarif-card.populaire {
+      border-color: var(--cyan);
+      box-shadow: 0 0 40px rgba(0,212,255,0.3);
+    }
+    .tarif-card.populaire::before {
+      content: 'POPULAIRE';
+      position: absolute;
+      top: -12px; left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, var(--cyan), var(--violet));
+      color: var(--noir);
+      padding: 4px 16px;
+      border-radius: 20px;
+      font-size: 0.7em;
+      font-weight: 700;
+      font-family: 'JetBrains Mono', monospace;
+      letter-spacing: 1px;
+    }
+    .tarif-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--cyan);
+      box-shadow: 0 20px 50px rgba(0,212,255,0.2);
+    }
+    .tarif-nom {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.2em;
+      font-weight: 600;
+      color: var(--cyan);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .tarif-prix {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.8em;
+      font-weight: 700;
+      color: var(--blanc);
+      margin-bottom: 5px;
+      letter-spacing: -1px;
+    }
+    .tarif-prix small {
+      font-size: 0.4em;
+      color: var(--gris);
+      font-weight: 400;
+    }
+    .tarif-duree {
+      color: var(--gris);
+      font-size: 0.85em;
+      font-family: 'JetBrains Mono', monospace;
+      margin-bottom: 25px;
+    }
+    .tarif-liste {
+      list-style: none;
+      text-align: left;
+      margin-bottom: 30px;
+    }
+    .tarif-liste li {
+      padding: 10px 0;
+      color: var(--gris);
+      font-size: 0.9em;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .tarif-liste li::before {
+      content: '✓';
+      color: var(--cyan);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .tarif-btn {
+      display: block;
+      padding: 12px;
+      background: rgba(0,212,255,0.1);
+      border: 1px solid var(--cyan);
+      color: var(--cyan);
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+    .tarif-btn:hover {
+      background: var(--cyan);
+      color: var(--noir);
+      box-shadow: 0 0 30px rgba(0,212,255,0.5);
+    }
+    .tarif-card.populaire .tarif-btn {
+      background: linear-gradient(135deg, var(--cyan), var(--bleu));
+      color: var(--noir);
+      border: none;
+    }
+    
+    /* À PROPOS */
+    .about-page {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      margin-bottom: 60px;
+    }
+    .about-page-image {
+      border-radius: 20px;
+      overflow: hidden;
+      aspect-ratio: 4/5;
+      border: 1px solid rgba(0,212,255,0.3);
+      position: relative;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.6), 0 0 60px rgba(0,212,255,0.15);
+    }
+    .about-page-image img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      filter: brightness(0.9) contrast(1.05);
+    }
+    .about-page-image .info-card {
+      position: absolute;
+      top: 20px; right: 20px;
+      background: rgba(5,7,13,0.9);
+      backdrop-filter: blur(15px);
+      padding: 12px 18px;
+      border-radius: 12px;
+      border: 1px solid rgba(0,212,255,0.4);
+      text-align: center;
+    }
+    .about-page-image .info-card .num {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.8em;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--cyan), var(--violet));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .about-page-image .info-card .lbl {
+      font-size: 0.65em;
+      color: var(--gris);
+      font-family: 'JetBrains Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .about-page-texte h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.2em;
+      font-weight: 700;
+      margin-bottom: 25px;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+    }
+    .about-page-texte h3 .gradient {
+      background: linear-gradient(135deg, var(--cyan), var(--violet));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .about-page-texte p {
+      color: var(--gris);
+      font-size: 1.05em;
+      margin-bottom: 20px;
+      line-height: 1.8;
+    }
+    .about-page-texte strong { color: var(--blanc); font-weight: 600; }
+    
+    .about-points {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-top: 35px;
+    }
+    .about-point {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      background: rgba(0,212,255,0.05);
+      border: 1px solid rgba(0,212,255,0.15);
+      border-radius: 10px;
+      font-weight: 500;
+      font-size: 0.9em;
+    }
+    .about-point .check {
+      width: 22px; height: 22px;
+      background: linear-gradient(135deg, var(--cyan), var(--bleu));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--noir);
+      font-size: 0.7em;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    
+    /* TÉMOIGNAGES */
+    .temoignages-grille {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin-top: 50px;
+    }
+    .temoignage {
+      background: linear-gradient(135deg, rgba(17,24,39,0.8), rgba(5,7,13,0.8));
+      padding: 35px 30px;
+      border-radius: 16px;
+      border: 1px solid rgba(0,212,255,0.15);
+      position: relative;
+    }
+    .temoignage::before {
+      content: '"';
+      position: absolute;
+      top: 10px; right: 25px;
+      font-size: 5em;
+      color: rgba(0,212,255,0.15);
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+    .etoiles {
+      color: #fbbf24;
+      font-size: 1.1em;
+      margin-bottom: 15px;
+      letter-spacing: 3px;
+    }
+    .temoignage p {
+      color: var(--gris);
+      font-style: italic;
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+    .temoignage-auteur {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .avatar {
+      width: 45px; height: 45px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid var(--cyan);
+      flex-shrink: 0;
+    }
+    .avatar img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    .auteur-info .nom {
+      color: var(--blanc);
+      font-weight: 600;
+      font-size: 0.95em;
+    }
+    .auteur-info .role {
+      color: var(--gris);
+      font-size: 0.8em;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    
+    /* CONTACT */
+    .contact-grille {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: start;
+    }
+    .contact-info h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.4em;
+      font-weight: 700;
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+      line-height: 1.1;
+    }
+    .contact-info h2 .gradient {
+      background: linear-gradient(135deg, var(--cyan), var(--violet));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .contact-info > p {
+      color: var(--gris);
+      font-size: 1.05em;
+      margin-bottom: 30px;
+    }
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      color: var(--gris);
+      padding: 16px 20px;
+      background: rgba(0,212,255,0.03);
+      border: 1px solid rgba(0,212,255,0.1);
+      border-radius: 12px;
+      transition: all 0.3s;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .contact-detail:hover {
+      background: rgba(0,212,255,0.08);
+      border-color: var(--cyan);
+      transform: translateX(5px);
+    }
+    .contact-detail-icon {
+      width: 42px; height: 42px;
+      background: linear-gradient(135deg, rgba(0,212,255,0.15), rgba(124,58,237,0.15));
+      border: 1px solid rgba(0,212,255,0.3);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-detail-icon svg {
+      width: 22px; height: 22px;
+      stroke: var(--cyan);
+      stroke-width: 2;
+      fill: none;
+    }
+    .contact-detail strong { color: var(--blanc); display: block; font-size: 0.85em; margin-bottom: 2px; }
+    .contact-detail span { font-size: 0.9em; }
+    
+    .formulaire {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      padding: 40px;
+      background: linear-gradient(135deg, rgba(17,24,39,0.8), rgba(5,7,13,0.8));
+      border: 1px solid rgba(0,212,255,0.2);
+      border-radius: 20px;
+    }
+    .formulaire h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+    .form-groupe { display: flex; flex-direction: column; gap: 6px; }
+    .form-groupe label {
+      font-size: 0.8em;
+      color: var(--gris);
+      font-family: 'JetBrains Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .form-groupe input,
+    .form-groupe textarea,
+    .form-groupe select {
+      padding: 14px 18px;
+      background: rgba(5,7,13,0.5);
+      border: 1px solid rgba(0,212,255,0.2);
+      border-radius: 10px;
+      color: var(--blanc);
+      font-family: inherit;
+      font-size: 0.95em;
+      transition: all 0.3s;
+      resize: vertical;
+    }
+    .form-groupe input:focus,
+    .form-groupe textarea:focus,
+    .form-groupe select:focus {
+      outline: none;
+      border-color: var(--cyan);
+      box-shadow: 0 0 20px rgba(0,212,255,0.3);
+    }
+    .form-groupe select option {
+      background: var(--noir-2);
+      color: var(--blanc);
+    }
+    .form-groupe input::placeholder,
+    .form-groupe textarea::placeholder { color: rgba(148,163,184,0.5); }
+    
+    .btn-envoyer {
+      padding: 16px;
+      background: linear-gradient(135deg, var(--cyan), var(--bleu));
+      color: var(--noir);
+      border: none;
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 1em;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s;
+      box-shadow: 0 0 25px rgba(0,212,255,0.3);
+    }
+    .btn-envoyer:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 45px rgba(0,212,255,0.7);
+    }
+    
+    .loc-carte {
+      max-width: 100%;
+      margin: 50px auto 0;
+      background: linear-gradient(135deg, rgba(17,24,39,0.9), rgba(5,7,13,0.9));
+      border-radius: 20px;
+      border: 1px solid rgba(0,212,255,0.2);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .loc-image {
+      position: relative;
+      min-height: 350px;
+      overflow: hidden;
+    }
+    .loc-image img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      filter: brightness(0.7) contrast(1.1);
+    }
+    .loc-image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, transparent 40%, rgba(5,7,13,0.9) 100%);
+    }
+    .loc-image .pin {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+    }
+    .loc-image .pin-inner {
+      width: 70px; height: 70px;
+      background: linear-gradient(135deg, var(--cyan), var(--violet));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 40px rgba(0,212,255,0.8);
+      animation: pulsePin 2s ease-in-out infinite;
+    }
+    @keyframes pulsePin {
+      0%, 100% { box-shadow: 0 0 40px rgba(0,212,255,0.8); }
+      50% { box-shadow: 0 0 60px rgba(0,212,255,1); }
+    }
+    .loc-image .pin-inner svg {
+      width: 36px; height: 36px;
+      stroke: var(--noir);
+      stroke-width: 2.5;
+      fill: none;
+    }
+    .loc-info { padding: 40px; }
+    .loc-info h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.6em;
+      color: var(--blanc);
+      margin-bottom: 25px;
+    }
+    .loc-ligne {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 16px 18px;
+      background: rgba(0,212,255,0.03);
+      border: 1px solid rgba(0,212,255,0.1);
+      border-radius: 12px;
+      margin-bottom: 12px;
+    }
+    .loc-ligne svg {
+      width: 22px; height: 22px;
+      stroke: var(--cyan);
+      stroke-width: 2;
+      fill: none;
+      flex-shrink: 0;
+    }
+    .loc-ligne strong { color: var(--blanc); font-weight: 600; }
+    .loc-ligne span { color: var(--gris); }
+    
+    /* WHATSAPP FLOTTANT */
+    .wa-flottant {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 65px; height: 65px;
+      background: linear-gradient(135deg, var(--vert-wa), #1eb855);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+      box-shadow: 0 0 30px rgba(37,211,102,0.6);
+      transition: all 0.3s;
+      text-decoration: none;
+      animation: bounceWa 2s infinite;
+    }
+    .wa-flottant svg { width: 32px; height: 32px; fill: var(--blanc); }
+    .wa-flottant::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      border: 2px solid var(--vert-wa);
+      animation: ring 2s ease-out infinite;
+    }
+    @keyframes ring {
+      0% { transform: scale(1); opacity: 1; }
+      100% { transform: scale(1.7); opacity: 0; }
+    }
+    @keyframes bounceWa {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    .wa-flottant:hover {
+      transform: scale(1.15);
+      animation: none;
+      box-shadow: 0 0 50px rgba(37,211,102,1);
+    }
+    
+    /* EMAIL FLOTTANT */
+    .email-flottant {
+      position: fixed;
+      bottom: 110px;
+      right: 30px;
+      width: 55px; height: 55px;
+      background: linear-gradient(135deg, var(--cyan), var(--violet));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+      box-shadow: 0 0 25px rgba(0,212,255,0.6);
+      transition: all 0.3s;
+      text-decoration: none;
+    }
+    .email-flottant svg { width: 24px; height: 24px; stroke: var(--blanc); stroke-width: 2; fill: none; }
+    .email-flottant:hover {
+      transform: scale(1.15);
+      box-shadow: 0 0 45px rgba(0,212,255,1);
+    }
+    
+    /* TOAST */
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: linear-gradient(135deg, var(--noir-2), var(--noir-3));
+      border: 1px solid var(--cyan);
+      border-radius: 12px;
+      padding: 16px 28px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 0 40px rgba(0,212,255,0.4);
+      z-index: 100000;
+      opacity: 0;
+      transition: all 0.4s;
+      font-size: 0.95em;
+    }
+    .toast.visible {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+    .toast-icon {
+      width: 28px; height: 28px;
+      background: linear-gradient(135deg, var(--cyan), var(--violet));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--noir);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    
+    /* FOOTER */
+    footer {
+      background: var(--noir-2);
+      padding: 50px 5% 30px;
+      border-top: 1px solid rgba(0,212,255,0.1);
+      margin-top: 60px;
+    }
+    .footer-contenu {
+      max-width: 1300px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 50px;
+      margin-bottom: 30px;
+    }
+    .footer-col h4 {
+      font-family: 'Space Grotesk', sans-serif;
+      color: var(--cyan);
+      font-size: 1.1em;
+      margin-bottom: 20px;
+    }
+    .footer-col p, .footer-col a {
+      color: var(--gris);
+      font-size: 0.9em;
+      line-height: 2;
+      text-decoration: none;
+      display: block;
+      transition: color 0.3s;
+      cursor: pointer;
+    }
+    .footer-col a:hover { color: var(--cyan); }
+    .footer-bas {
+      text-align: center;
+      padding-top: 25px;
+      border-top: 1px solid rgba(0,212,255,0.1);
+      color: var(--gris);
+      font-size: 0.85em;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .footer-bas .cyan { color: var(--cyan); }
+    
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .service-detail,
+      .service-detail.inverse { grid-template-columns: 1fr; }
+      .service-detail.inverse .service-detail-image { order: 1; }
+      .service-detail.inverse .service-detail-texte { order: 2; }
+      .about-page { grid-template-columns: 1fr; }
+      .contact-grille { grid-template-columns: 1fr; }
+      .loc-carte { grid-template-columns: 1fr; }
+      .loc-image { min-height: 250px; }
+      .galerie { grid-template-columns: repeat(2, 1fr); }
+      .footer-contenu { grid-template-columns: 1fr; text-align: center; }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(0,212,255,0.15); padding: 20px; }
+      .stat-item:last-child { border-bottom: none; }
+    }
+    
+    @media (max-width: 768px) {
+      .hamburger { display: block; }
+      nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 340px;
+        height: 100vh;
+        background: rgba(5,7,13,0.98);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        justify-content: center;
+        padding: 40px;
+        gap: 10px;
+        transition: right 0.4s;
+        border-left: 1px solid rgba(0,212,255,0.2);
+      }
+      nav.ouvert { right: 0; }
+      nav a { font-size: 1em; padding: 14px 20px; width: 100%; }
+      
+      .hero-accueil h1 { font-size: 2.4em; }
+      .hero-accueil p { font-size: 1em; }
+      .hero-btns { flex-direction: column; }
+      .btn-neon, .btn-ghost { width: 100%; justify-content: center; }
+      
+      .entete-section h2 { font-size: 2em; }
+      .page { padding: 110px 20px 60px; }
+      
+      .coords-rapides { flex-direction: column; align-items: stretch; }
+      .coord-card { justify-content: center; }
+      
+      .service-detail { padding: 30px 20px; }
+      .service-detail-texte h3 { font-size: 1.5em; }
+      
+      .about-page-texte h3 { font-size: 1.6em; }
+      .about-points { grid-template-columns: 1fr; }
+      
+      .stats-section { padding: 40px 20px; }
+      .stat-nombre { font-size: 2.4em; }
+      
+      .galerie { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .galerie-item .legende { font-size: 0.8em; padding: 15px 12px 10px; }
+      
+      .loc-info { padding: 30px 20px; }
+      .formulaire { padding: 30px 22px; }
+      
+      .wa-flottant { width: 55px; height: 55px; bottom: 20px; right: 20px; }
+      .wa-flottant svg { width: 26px; height: 26px; }
+      .email-flottant { width: 48px; height: 48px; bottom: 85px; right: 20px; }
+      .email-flottant svg { width: 20px; height: 20px; }
+      
+      .logo-hex { width: 38px; height: 38px; }
+      .logo-texte .haut { font-size: 1.1em; }
+      .logo-texte .bas { font-size: 0.55em; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo" onclick="ouvrirPage('accueil')">
+      <div class="logo-hex">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="hexGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#00d4ff"/>
+              <stop offset="100%" stop-color="#7c3aed"/>
+            </linearGradient>
+          </defs>
+          <polygon points="50,5 90,27 90,73 50,95 10,73 10,27" 
+                   fill="none" stroke="url(#hexGrad)" stroke-width="3"/>
+          <text x="50" y="62" text-anchor="middle" 
+                font-family="Space Grotesk, sans-serif" font-size="38" font-weight="700" 
+                fill="url(#hexGrad)">2S</text>
+        </svg>
+      </div>
+      <div class="logo-texte">
+        <span class="haut">2S BUSINESS</span>
+        <span class="bas">TECH REPAIR · LOMÉ</span>
+      </div>
+    </div>
+    
+    <button class="hamburger" onclick="toggleMenu()" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    
+    <nav id="menu">
+      <a onclick="ouvrirPage('accueil')" data-page="accueil" class="actif">Accueil</a>
+      <a onclick="ouvrirPage('services')" data-page="services">Services</a>
+      <a onclick="ouvrirPage('galerie')" data-page="galerie">Galerie</a>
+      <a onclick="ouvrirPage('tarifs')" data-page="tarifs">Tarifs</a>
+      <a onclick="ouvrirPage('apropos')" data-page="apropos">À propos</a>
+      <a onclick="ouvrirPage('contact')" data-page="contact" class="btn-nav">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ============================================================
+       PAGE ACCUEIL
+  ============================================================ -->
+  <div class="page active" id="page-accueil">
+    <div class="page-contenu">
+      <div class="hero-accueil">
+        <div>
+          <div class="hero-badge">Disponible maintenant</div>
+          <h1>Réparation & Vente<br><span class="gradient">Tech Premium</span> à Lomé</h1>
+          <p>Téléphones • Ordinateurs • Accessoires. Un service de qualité, une garantie, un prix juste.</p>
+          <div class="hero-btns">
+            <a href="https://wa.me/22870833390?text=Bonjour%202S%20BUSINESS,%20je%20vous%20contacte%20depuis%20votre%20site" target="_blank" class="btn-neon">📱 WhatsApp direct</a>
+            <a onclick="ouvrirPage('services')" class="btn-ghost">Voir nos services →</a>
+          </div>
+          
+          <!-- Coordonnées rapides -->
+          <div class="coords-rapides">
+            <a href="tel:+22870833390" class="coord-card">
+              <div class="ic">
+                <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div class="info">
+                <div class="lbl">Appeler</div>
+                <div class="val">+228 70 83 33 90</div>
+              </div>
+            </a>
+            <a href="https://wa.me/22870833390" target="_blank" class="coord-card wa">
+              <div class="ic">
+                <svg viewBox="0 0 24 24" style="stroke:none;fill:var(--noir);"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              </div>
+              <div class="info">
+                <div class="lbl">WhatsApp</div>
+                <div class="val">+228 70 83 33 90</div>
+              </div>
+            </a>
+            <a href="mailto:msouleman28@gmail.com" class="coord-card">
+              <div class="ic">
+                <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div class="info">
+                <div class="lbl">Email</div>
+                <div class="val">msouleman28@gmail.com</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="apercu-grille">
+        <div class="apercu-card" onclick="ouvrirPage('services')">
+          <div class="apercu-image">
+            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&q=80" alt="Réparation téléphone">
+          </div>
+          <div class="apercu-corps">
+            <h3>Réparation Téléphone</h3>
+            <p>Écran, batterie, carte mère, logiciel...</p>
+          </div>
+        </div>
+        <div class="apercu-card" onclick="ouvrirPage('services')">
+          <div class="apercu-image">
+            <img src="https://images.unsplash.com/photo-1588702547923-7093a6c3ba33?w=600&q=80" alt="Réparation ordinateur">
+          </div>
+          <div class="apercu-corps">
+            <h3>Réparation Ordinateur</h3>
+            <p>Panne, lenteur, maintenance complète.</p>
+          </div>
+        </div>
+        <div class="apercu-card" onclick="ouvrirPage('services')">
+          <div class="apercu-image">
+            <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=600&q=80" alt="Vente accessoires">
+          </div>
+          <div class="apercu-corps">
+            <h3>Vente d'Appareils</h3>
+            <p>Téléphones, PC, accessoires neufs.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="stats-section">
+        <div class="stats-grille">
+          <div class="stat-item">
+            <span class="stat-nombre" data-cible="500">0</span>
+            <span class="stat-label">Réparations</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-nombre" data-cible="1000">0</span>
+            <span class="stat-label">Clients</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-nombre" data-cible="5">0</span>
+            <span class="stat-label">Années</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-nombre" data-cible="100">0</span>
+            <span class="stat-label">Garantie</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE SERVICES -->
+  <div class="page" id="page-services">
+    <div class="page-contenu">
+      <div class="entete-section">
+        <div class="tag">Ce que nous faisons</div>
+        <h2>Nos <span class="gradient">Services</span></h2>
+        <p>Un savoir-faire technique reconnu, des résultats garantis.</p>
+      </div>
+      
+      <div class="service-detail">
+        <div class="service-detail-image">
+          <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80" alt="Réparation téléphone">
+        </div>
+        <div class="service-detail-texte">
+          <div class="service-detail-num">// 01</div>
+          <h3>Réparation <span class="gradient">Téléphone</span></h3>
+          <p>Écran cassé, batterie usée, bouton défaillant, carte mère, problème logiciel... Nous réparons toutes les marques avec précision.</p>
+          <ul class="service-liste">
+            <li>Écran cassé ou fissuré</li>
+            <li>Batterie qui ne tient plus</li>
+            <li>Bouton power ou volume</li>
+            <li>Connecteur de charge</li>
+            <li>Problème logiciel / système</li>
+            <li>Caméra, haut-parleur, micro</li>
+          </ul>
+          <a href="https://wa.me/22870833390?text=Bonjour,%20je%20souhaite%20faire%20réparer%20mon%20téléphone" target="_blank" class="btn-neon" style="margin-top: 15px;">Demander un devis →</a>
+        </div>
+      </div>
+      
+      <div class="service-detail inverse">
+        <div class="service-detail-image">
+          <img src="https://images.unsplash.com/photo-1588702547923-7093a6c3ba33?w=800&q=80" alt="Réparation ordinateur">
+        </div>
+        <div class="service-detail-texte">
+          <div class="service-detail-num">// 02</div>
+          <h3>Réparation <span class="gradient">Ordinateur</span></h3>
+          <p>Panne, lenteur, écran, clavier, système d'exploitation, nettoyage et maintenance complète. Nous redonnons vie à votre PC.</p>
+          <ul class="service-liste">
+            <li>Nettoyage et dépoussiérage</li>
+            <li>Remplacement écran / clavier</li>
+            <li>Installation Windows/Mac</li>
+            <li>Récupération de données</li>
+            <li>Changement disque dur / SSD</li>
+            <li>Réparation carte mère</li>
+          </ul>
+          <a href="https://wa.me/22870833390?text=Bonjour,%20je%20souhaite%20faire%20réparer%20mon%20ordinateur" target="_blank" class="btn-neon" style="margin-top: 15px;">Demander un devis →</a>
+        </div>
+      </div>
+      
+      <div class="service-detail">
+        <div class="service-detail-image">
+          <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=800&q=80" alt="Vente appareils">
+        </div>
+        <div class="service-detail-texte">
+          <div class="service-detail-num">// 03</div>
+          <h3>Vente <span class="gradient">d'Appareils</span></h3>
+          <p>Téléphones, ordinateurs, tablettes et accessoires neufs ou en bon état, à des prix attractifs.</p>
+          <ul class="service-liste">
+            <li>Téléphones neufs et occasion</li>
+            <li>Ordinateurs portables et fixes</li>
+            <li>Tablettes</li>
+            <li>Casques, écouteurs, chargeurs</li>
+            <li>Coques, protections, câbles</li>
+            <li>Conseils d'achat personnalisés</li>
+          </ul>
+          <a href="https://wa.me/22870833390?text=Bonjour,%20je%20souhaite%20acheter%20un%20appareil" target="_blank" class="btn-neon" style="margin-top: 15px;">Voir les prix →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE GALERIE -->
+  <div class="page" id="page-galerie">
+    <div class="page-contenu">
+      <div class="entete-section">
+        <div class="tag">Nos réalisations</div>
+        <h2>En <span class="gradient">images</span></h2>
+        <p>Un aperçu de notre atelier et de notre savoir-faire.</p>
+      </div>
+      
+      <div class="galerie">
+        <div class="galerie-item">
+          <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&q=80" alt="Atelier réparation">
+          <div class="legende">🔧 Notre atelier</div>
+        </div>
+        <div class="galerie-item">
+          <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&q=80" alt="Réparation smartphone">
+          <div class="legende">📱 Réparation smartphone</div>
+        </div>
+        <div class="galerie-item">
+          <img src="https://images.unsplash.com/photo-1588702547923-7093a6c3ba33?w=600&q=80" alt="Réparation PC">
+          <div class="legende">💻 Réparation PC</div>
+        </div>
+        <div class="galerie-item">
+          <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=600&q=80" alt="Accessoires">
+          <div class="legende">🎧 Accessoires</div>
+        </div>
+        <div class="galerie-item">
+          <img src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?w=600&q=80" alt="Composants">
+          <div class="legende">🔌 Composants</div>
+        </div>
+        <div class="galerie-item">
+          <img src="https://images.unsplash.com/photo-1556656793-08538906a9f8?w=600&q=80" alt="Smartphone réparé">
+          <div class="legende">📱 Smartphone réparé</div>
+        </div>
+        <div class="galerie-item">
+          <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&q=80" alt="PC portable">
+          <div class="legende">💻 PC portable</div>
+        </div>
+        <div class="galerie-item">
+          <img src="https://images.unsplash.com/photo-1601972599720-36938d4ecd31?w=600&q=80" alt="Travail atelier">
+          <div class="legende">⚡ Travail en atelier</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE TARIFS -->
+  <div class="page" id="page-tarifs">
+    <div class="page-contenu">
+      <div class="entete-section">
+        <div class="tag">Nos prix</div>
+        <h2>Tarifs <span class="gradient">transparents</span></h2>
+        <p>Des prix clairs, sans surprises. Devis gratuit avant toute intervention.</p>
+      </div>
+      
+      <div class="tarifs-grille">
+        <div class="tarif-card">
+          <div class="tarif-nom">Diagnostic</div>
+          <div class="tarif-prix">Gratuit</div>
+          <div class="tarif-duree">Examen de l'appareil</div>
+          <ul class="tarif-liste">
+            <li>Analyse complète</li>
+            <li>Devis détaillé</li>
+            <li>Conseils personnalisés</li>
+            <li>Sans engagement</li>
+          </ul>
+          <a href="https://wa.me/22870833390?text=Bonjour,%20je%20souhaite%20un%20diagnostic%20gratuit" target="_blank" class="tarif-btn">Demander</a>
+        </div>
+        
+        <div class="tarif-card populaire">
+          <div class="tarif-nom">Réparation</div>
+          <div class="tarif-prix">Dès 5 000<small> FCFA</small></div>
+          <div class="tarif-duree">Selon la panne</div>
+          <ul class="tarif-liste">
+            <li>Écran, batterie, connecteur</li>
+            <li>Toutes marques</li>
+            <li>Pièces de qualité</li>
+            <li>Garantie 1 mois</li>
+          </ul>
+          <a href="https://wa.me/22870833390?text=Bonjour,%20je%20souhaite%20une%20réparation" target="_blank" class="tarif-btn">Demander</a>
+        </div>
+        
+        <div class="tarif-card">
+          <div class="tarif-nom">Achat</div>
+          <div class="tarif-prix">Variable</div>
+          <div class="tarif-duree">Selon le modèle</div>
+          <ul class="tarif-liste">
+            <li>Téléphones neufs</li>
+            <li>Ordinateurs</li>
+            <li>Accessoires</li>
+            <li>Conseils d'achat</li>
+          </ul>
+          <a href="https://wa.me/22870833390?text=Bonjour,%20je%20souhaite%20acheter%20un%20appareil" target="_blank" class="tarif-btn">Demander</a>
+        </div>
+      </div>
+      
+      <div class="entete-section" style="margin-top: 90px;">
+        <div class="tag">Avis clients</div>
+        <h2>Ce qu'ils <span class="gradient">disent</span></h2>
+        <p>Des centaines de clients satisfaits à Lomé.</p>
+      </div>
+      
+      <div class="temoignages-grille" style="margin-top: 0;">
+        <div class="temoignage">
+          <div class="etoiles">★★★★★</div>
+          <p>« Mon iPhone ne s'allumait plus. En 2 heures, Souleman l'a réparé. Travail rapide et prix très correct. Je recommande ! »</p>
+          <div class="temoignage-auteur">
+            <div class="avatar"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Kossi"></div>
+            <div class="auteur-info">
+              <div class="nom">Kossi A.</div>
+              <div class="role">Client · Lomé</div>
+            </div>
+          </div>
+        </div>
+        <div class="temoignage">
+          <div class="etoiles">★★★★★</div>
+          <p>« J'ai acheté mon ordinateur portable chez 2S BUSINESS. Bon prix, bon conseil, et le service après-vente est vraiment top. »</p>
+          <div class="temoignage-auteur">
+            <div class="avatar"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Afi"></div>
+            <div class="auteur-info">
+              <div class="nom">Afi M.</div>
+              <div class="role">Cliente · Agoè</div>
+            </div>
+          </div>
+        </div>
+        <div class="temoignage">
+          <div class="etoiles">★★★★★</div>
+          <p>« Écran cassé, il me l'a remplacé avec une pièce d'origine. Le téléphone est comme neuf. Merci ! »</p>
+          <div class="temoignage-auteur">
+            <div class="avatar"><img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Jean"></div>
+            <div class="auteur-info">
+              <div class="nom">Jean D.</div>
+              <div class="role">Client · Adidogomé</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE À PROPOS -->
+  <div class="page" id="page-apropos">
+    <div class="page-contenu">
+      <div class="entete-section">
+        <div class="tag">Notre histoire</div>
+        <h2>À propos de <span class="gradient">2S BUSINESS</span></h2>
+        <p>Fondée par un passionné de la technologie à Lomé.</p>
+      </div>
+      
+      <div class="about-page">
+        <div class="about-page-image">
+          <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&q=80" alt="Atelier 2S BUSINESS">
+          <div class="info-card">
+            <div class="num">5+</div>
+            <div class="lbl">Ans d'exp.</div>
+          </div>
+        </div>
+        
+        <div class="about-page-texte">
+          <h3>Fondée par <span class="gradient">Mr MOHAMED Souleman</span></h3>
+          <p>
+            <strong>2S BUSINESS</strong> est née d'une passion : rendre la technologie accessible à tous les Loméens.
+            Spécialisée dans la <strong>réparation de téléphones portables et d'ordinateurs</strong>,
+            notre entreprise est aussi votre partenaire pour la <strong>vente d'appareils et d'accessoires</strong> de qualité.
+          </p>
+          <p>
+            Notre mission : un service <strong>rapide, fiable et à prix juste</strong>. Que ce soit pour réparer votre téléphone,
+            entretenir votre ordinateur ou acheter du matériel, vous êtes entre de bonnes mains.
+          </p>
+          <div class="about-points">
+            <div class="about-point"><div class="check">✓</div><span>Réparation rapide</span></div>
+            <div class="about-point"><div class="check">✓</div><span>Prix justes</span></div>
+            <div class="about-point"><div class="check">✓</div><span>Toutes marques</span></div>
+            <div class="about-point"><div class="check">✓</div><span>Garantie service</span></div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="entete-section" style="margin-top: 60px;">
+        <div class="tag">Nous rendre visite</div>
+        <h2>Où nous <span class="gradient">trouver</span></h2>
+        <p>Venez nous rencontrer à Agoè Catholique.</p>
+      </div>
+      
+      <div class="loc-carte">
+        <div class="loc-image">
+          <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&q=80" alt="Lomé">
+          <div class="pin">
+            <div class="pin-inner">
+              <svg viewBox="0 0 24 24">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="loc-info">
+          <h3>Notre emplacement</h3>
+          <div class="loc-ligne">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span><strong>Adresse :</strong>&nbsp; Lomé, Agoè Catholique</span>
+          </div>
+          <div class="loc-ligne">
+            <svg viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+            <span><strong>Repère :</strong>&nbsp; Route poussiéreuse, 300 m du goudron</span>
+          </div>
+          <div class="loc-ligne">
+            <svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/></svg>
+            <span><strong>Point de repère :</strong>&nbsp; En face de l'Hôtel LKG2</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE CONTACT -->
+  <div class="page" id="page-contact">
+    <div class="page-contenu">
+      <div class="entete-section">
+        <div class="tag">Contactez-nous</div>
+        <h2>Parlons de votre <span class="gradient">projet</span></h2>
+        <p>Un devis gratuit, une question, une commande ? Écrivez-nous.</p>
+      </div>
+      
+      <div class="contact-grille">
+        <div class="contact-info">
+          <h2>Nos <span class="gradient">coordonnées</span></h2>
+          <p>Nous répondons rapidement par téléphone, WhatsApp ou email.</p>
+          <div class="contact-details">
+            <a href="https://wa.me/22870833390" target="_blank" class="contact-detail">
+              <div class="contact-detail-icon" style="background: rgba(37,211,102,0.15); border-color: rgba(37,211,102,0.4);">
+                <svg viewBox="0 0 24 24" style="stroke: var(--vert-wa);"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              </div>
+              <div>
+                <strong>WhatsApp (préféré)</strong>
+                <span>+228 70 83 33 90</span>
+              </div>
+            </a>
+            <a href="tel:+22870833390" class="contact-detail">
+              <div class="contact-detail-icon">
+                <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div>
+                <strong>Téléphone</strong>
+                <span>+228 70 83 33 90</span>
+              </div>
+            </a>
+            <a href="mailto:msouleman28@gmail.com" class="contact-detail">
+              <div class="contact-detail-icon">
+                <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <strong>Email</strong>
+                <span>msouleman28@gmail.com</span>
+              </div>
+            </a>
+            <div class="contact-detail" style="cursor: default;">
+              <div class="contact-detail-icon">
+                <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <strong>Adresse</strong>
+                <span>Lomé, Agoè Catholique — Face Hôtel LKG2</span>
+              </div>
+            </div>
+            <div class="contact-detail" style="cursor: default;">
+              <div class="contact-detail-icon">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div>
+                <strong>Horaires</strong>
+                <span>Lun-Sam : 8h-19h · Dim : 10h-15h</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <form class="formulaire" onsubmit="envoyerFormulaire(event)">
+          <h3>Envoyez-nous un message</h3>
+          <div class="form-groupe">
+            <label>Votre nom</label>
+            <input type="text" id="nom" placeholder="Ex: Kossi Amegan" required>
+          </div>
+          <div class="form-groupe">
+            <label>Sujet</label>
+            <select id="sujet">
+              <option>Réparation téléphone</option>
+              <option>Réparation ordinateur</option>
+              <option>Achat d'appareil</option>
+              <option>Devis gratuit</option>
+              <option>Autre</option>
+            </select>
+          </div>
+          <div class="form-groupe">
+            <label>Message</label>
+            <textarea id="message" rows="4" placeholder="Décrivez votre besoin..." required></textarea>
+          </div>
+          <button type="submit" class="btn-envoyer">Envoyer via WhatsApp →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOUTONS FLOTTANTS -->
+  <a href="https://wa.me/22870833390?text=Bonjour%202S%20BUSINESS,%20je%20vous%20contacte%20depuis%20votre%20site" target="_blank" class="wa-flottant" title="WhatsApp : +228 70 83 33 90">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <a href="mailto:msouleman28@gmail.com?subject=Contact%20depuis%20le%20site%202S%20BUSINESS" class="email-flottant" title="Email : msouleman28@gmail.com">
+    <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+  </a>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast">
+    <div class="toast-icon">✓</div>
+    <span id="toastMessage">Message envoyé</span>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-contenu">
+      <div class="footer-col">
+        <h4>2S BUSINESS</h4>
+        <p>Votre expert en réparation et vente de téléphones, ordinateurs et accessoires à Lomé.</p>
+        <p style="margin-top: 15px;">Fondée par Mr MOHAMED Souleman</p>
+        <p style="margin-top: 15px;">📱 <a href="https://wa.me/22870833390" style="display: inline; color: var(--vert-wa);">+228 70 83 33 90</a></p>
+        <p>📧 <a href="mailto:msouleman28@gmail.com" style="display: inline;">msouleman28@gmail.com</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <a onclick="ouvrirPage('accueil')">Accueil</a>
+        <a onclick="ouvrirPage('services')">Services</a>
+        <a onclick="ouvrirPage('galerie')">Galerie</a>
+        <a onclick="ouvrirPage('tarifs')">Tarifs</a>
+        <a onclick="ouvrirPage('apropos')">À propos</a>
+        <a onclick="ouvrirPage('contact')">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Nous trouver</h4>
+        <p>Lomé, Agoè Catholique</p>
+        <p>300 m du goudron</p>
+        <p>Face Hôtel LKG2</p>
+        <p style="margin-top: 15px;">Lun-Sam : 8h-19h · Dim : 10h-15h</p>
+      </div>
+    </div>
+    <div class="footer-bas">
+      © 2025 <span class="cyan">2S BUSINESS</span> — Tous droits réservés
+    </div>
+  </footer>
+
+  <script>
+    function ouvrirPage(nom) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      const page = document.getElementById('page-' + nom);
+      if (page) {
+        page.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+      document.querySelectorAll('nav a[data-page]').forEach(a => {
+        a.classList.toggle('actif', a.dataset.page === nom);
+      });
+      fermerMenu();
+      if (history.pushState) history.pushState(null, '', '#' + nom);
+      else location.hash = '#' + nom;
+      if (nom === 'accueil') setTimeout(animerStats, 100);
+    }
+    
+    window.addEventListener('DOMContentLoaded', () => {
+      const hash = window.location.hash.replace('#', '') || 'accueil';
+      ouvrirPage(hash);
+    });
+    
+    window.addEventListener('popstate', () => {
+      const hash = window.location.hash.replace('#', '') || 'accueil';
+      ouvrirPage(hash);
+    });
+    
+    function toggleMenu() {
+      document.getElementById('menu').classList.toggle('ouvert');
+      document.getElementById('hamburger').classList.toggle('actif');
+    }
+    function fermerMenu() {
+      document.getElementById('menu').classList.remove('ouvert');
+      document.getElementById('hamburger').classList.remove('actif');
+    }
+    
+    function animerStats() {
+      document.querySelectorAll('.stat-nombre').forEach(el => {
+        const cible = parseInt(el.dataset.cible);
+        if (isNaN(cible)) return;
+        let actuel = 0;
+        const step = cible / 70;
+        el.textContent = '0';
+        const timer = setInterval(() => {
+          actuel += step;
+          if (actuel >= cible) {
+            el.textContent = cible + (cible === 100 ? '%' : '+');
+            clearInterval(timer);
+          } else {
+            el.textContent = Math.floor(actuel);
+          }
+        }, 25);
+      });
+    }
+    setTimeout(animerStats, 300);
+    
+    let toastTimeout;
+    function toast(message) {
+      const t = document.getElementById('toast');
+      document.getElementById('toastMessage').textContent = message;
+      t.classList.add('visible');
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => t.classList.remove('visible'), 3000);
+    }
+    
+    function envoyerFormulaire(e) {
+      e.preventDefault();
+      const nom = document.getElementById('nom').value;
+      const sujet = document.getElementById('sujet').value;
+      const message = document.getElementById('message').value;
+      const texte = `Bonjour 2S BUSINESS !%0A%0ANom : ${nom}%0ASujet : ${sujet}%0AMessage : ${message}`;
+      toast('Redirection vers WhatsApp...');
+      setTimeout(() => {
+        window.open(`https://wa.me/22870833390?text=${texte}`, '_blank');
+      }, 800);
+    }
+  </script>
+
+</body>
+</html>
